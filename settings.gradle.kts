@@ -1,5 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
+import org.jetbrains.intellij.platform.gradle.extensions.intellijPlatform
+
 rootProject.name = "cmp-ide-cross"
 
 /**
@@ -22,6 +24,10 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
     }
+    plugins {
+        id("org.jetbrains.kotlin.jvm") version "2.3.20"
+        id("org.jetbrains.changelog") version "2.5.0"
+    }
 }
 
 /**
@@ -40,21 +46,30 @@ dependencyResolutionManagement {
     }
 }
 
-/**
- * Automatically resolves and downloads compatible JDK if not present.
- */
 plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
+    id("org.jetbrains.intellij.platform.settings") version "2.17.0"
+}
+
+@Suppress("UnstableApiUsage")
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        intellijPlatform {
+            defaultRepositories()
+        }
+    }
 }
 
 /**
- * Project modules.
+ * Compose Multiplatform UI modules — shared code, desktop app, and web bundle for VS Code.
  */
-include(":cmp-ui:shared")
-include(":cmp-ui:desktopApp")
-include(":cmp-ui:webApp")
+include(":plugin-ui:shared")
+include(":plugin-ui:resources")
+include(":plugin-ui:desktopApp")
+include(":plugin-ui:webApp")
 
 /**
- * IntelliJ IDEA plugin demo — uses cmp-ui as a shared Compose Multiplatform dependency.
+ * IntelliJ IDEA plugin demo — ComposePanel in Swing tool window.
  */
-includeBuild("cmp-plugin")
+include("plugin-idea")

@@ -1,0 +1,45 @@
+{
+  "name": "cross-plugin",
+  "displayName": "Cross Plugin",
+  "description": "A single Kotlin Multiplatform + Compose Multiplatform UI, rendered natively across the IDE, VS Code, desktop, and the browser.",
+  "version": "0.0.1",
+  "publisher": "keygenqt",
+  "engines": {
+    "vscode": "^1.125.0"
+  },
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "cross-plugin-sidebar",
+          "title": "Cross Plugin",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "cross-plugin-sidebar": [
+        {
+          "type": "webview",
+          "id": "cross-plugin.sidebarView",
+          "name": "Control Dashboard",
+          "icon": "media/icon.svg"
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "@types/node": "24.x",
+    "@types/vscode": "^1.125.0"
+  },
+  "dependencies": {
+    "vscode": "^1.1.37"
+  }
+}
