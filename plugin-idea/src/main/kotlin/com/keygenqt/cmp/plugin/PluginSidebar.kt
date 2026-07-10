@@ -1,6 +1,5 @@
 package com.keygenqt.cmp.plugin
 
-
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.awt.ComposePanel
 import com.intellij.openapi.project.Project

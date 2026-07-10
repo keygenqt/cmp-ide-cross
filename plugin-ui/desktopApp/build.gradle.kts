@@ -7,21 +7,28 @@ plugins {
 }
 
 dependencies {
+    // Shared Compose UI code and platform resources
     implementation(projects.pluginUi.shared)
     implementation(projects.pluginUi.resources)
 
+    // Compose Desktop application runtime for the current OS
     implementation(compose.desktop.currentOs)
-    implementation(libs.kotlinx.coroutinesSwing)
+
+    // Material3 theming and IDE preview tooling support
+    implementation(libs.compose.material3)
     implementation(libs.compose.uiToolingPreview)
 
-    implementation(libs.compose.material3)
+    // Navigation between screens
     implementation(libs.navigation3.ui)
-    implementation(libs.androidx.lifecycle.viewmodelCompose)
-    implementation(libs.androidx.lifecycle.runtimeCompose)
 
+    // Swing dispatcher for coroutines, Koin DI for Compose
+    implementation(libs.kotlinx.coroutinesSwing)
     implementation(libs.koin.compose)
 }
 
+/**
+ * Desktop application configuration — native distributions for macOS, Windows, and Linux.
+ */
 compose.desktop {
     application {
         mainClass = "com.keygenqt.ide.cross.MainKt"

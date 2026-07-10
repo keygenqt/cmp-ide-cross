@@ -1,9 +1,6 @@
 package com.keygenqt.ide.cross.di
 
-import com.keygenqt.ide.cross.bridge.Environment
 import com.keygenqt.ide.cross.bridge.PlatformView
-import com.keygenqt.ide.cross.bridge.ViewBridge
-import com.keygenqt.ide.cross.bridge.bridge
 import com.keygenqt.ide.cross.view.main.MainViewModel
 import com.keygenqt.ide.cross.view.settings.SettingsViewModel
 import org.koin.dsl.module
@@ -14,6 +11,7 @@ import org.koin.dsl.module
 val appModule = module {
     // Kermit logging
     includes(loggingModule)
+
     // ViewModels
     single {
         MainViewModel(

@@ -24,6 +24,9 @@ import org.koin.compose.KoinApplication
 import org.koin.dsl.KoinConfiguration
 import org.koin.dsl.module
 
+/**
+ * Type-safe navigation routes — serializable destinations for Navigation 3.
+ */
 @Serializable
 sealed interface AppRoute : NavKey {
     @Serializable

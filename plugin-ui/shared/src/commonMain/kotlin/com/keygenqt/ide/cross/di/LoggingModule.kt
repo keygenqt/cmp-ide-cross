@@ -14,6 +14,11 @@ import org.koin.dsl.module
 import kotlin.time.Clock
 
 /**
+ * Platform-specific synchronized print implementation.
+ */
+internal expect fun synchronizedPrint(block: () -> Unit)
+
+/**
  * Time format for log entries: HH:mm:ss.SSS.
  */
 @OptIn(FormatStringsInDatetimeFormats::class)
@@ -85,8 +90,3 @@ val loggingModule: Module = module {
     Logger.setLogWriters(ColoredConsoleLogWriter)
     single<Logger> { Logger }
 }
-
-/**
- * Platform-specific synchronized print implementation.
- */
-internal expect fun synchronizedPrint(block: () -> Unit)

@@ -9,14 +9,20 @@ kotlin {
         browser()
         binaries.executable()
     }
+
     sourceSets {
         commonMain.dependencies {
+            // Shared Compose UI code and platform resources
             implementation(projects.pluginUi.resources)
             implementation(projects.pluginUi.shared)
 
+            // Material3 theming
             implementation(libs.compose.material3)
-            implementation(libs.compose.ui)
+
+            // Dependency injection
             implementation(libs.koin.compose)
+
+            // Navigation between screens
             implementation(libs.navigation3.ui)
         }
     }

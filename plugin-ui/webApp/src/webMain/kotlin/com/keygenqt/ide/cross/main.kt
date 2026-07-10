@@ -12,6 +12,9 @@ import com.keygenqt.ide.cross.bridge.web.WebEnvironment
 import kotlinx.browser.document
 import kotlinx.browser.window
 
+/**
+ * Web/JS entry point — mounts the Compose Multiplatform UI into the browser DOM via ComposeViewport.
+ */
 @OptIn(ExperimentalComposeUiApi::class)
 fun main() {
     ComposeViewport {

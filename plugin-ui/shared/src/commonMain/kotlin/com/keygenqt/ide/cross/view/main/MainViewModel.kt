@@ -13,9 +13,6 @@ class MainViewModel(
     view: PlatformView,
     logger: Logger
 ) : BaseViewModel(env, view) {
-
-    val platformName: String get() = env.platform.name
-
     init {
         logger.d { "platform: ${env.platform.name}" }
         logger.d { "view: ${view.name}" }
