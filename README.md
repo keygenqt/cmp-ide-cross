@@ -1,8 +1,10 @@
-# Cross Plugin (cmp-ide-cross)
+# Cross Plugin
 
 Cross-platform IDE tooling powered by Kotlin Multiplatform and Compose Multiplatform.
 One UI codebase — four targets: an IntelliJ Platform plugin, a VS Code extension,
 a JVM desktop app, and a browser build compiled to Kotlin/JS.
+
+![cross_plugin_showcase_1000.png](data/cross_plugin_showcase_1000.png)
 
 ## Architecture
 
